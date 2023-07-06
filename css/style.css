@@ -1,0 +1,41 @@
+
+/* RESET */
+
+
+
+*{
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+
+
+/* GENERAL */
+
+.bg_flag{
+    height: 11.25rem;
+}
+
+/* UTILITIES */
+
+.bg_green{
+    background-color:  	rgb(18,140,126);
+}
+
+.bg_Lgrey{
+    background-color: rgb(236,229,221);
+}
+
+.bg_white{
+    background-color: white;
+}
+
+
+
+
+
+/* DEBUG */
+
+
+.debug .container .row .bg_white{
+    background-color: brown !important; 
+}
