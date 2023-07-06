@@ -17,6 +17,16 @@
     z-index: 0;
 }
 
+.profile_pic{
+    border-radius: 50%;
+}
+
+i{
+    color: grey;
+    opacity: 0.6;
+    margin-right: 20px;
+}
+
 
 /* UTILITIES */
 
@@ -40,6 +50,6 @@
 
 
 .debug .container .row > *{
-    background-color: brown !important; 
+    background-color: white !important; 
     outline: 3px dashed black;
 }
