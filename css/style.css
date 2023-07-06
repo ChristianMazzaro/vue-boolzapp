@@ -4,7 +4,7 @@
 
 
 *{
-    margin: 0 auto;
+    margin: 0;
     box-sizing: border-box;
 }
 
@@ -31,6 +31,12 @@ i{
     position: absolute;
     top: 30px;
     left: 110px;
+}
+
+.hour_absolute{
+    position: absolute;
+    top: 0px;
+    right: 0px;
 }
 
 /* UTILITIES */
