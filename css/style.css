@@ -11,12 +11,6 @@
 
 /* GENERAL */
 
-.c_col{
-    width: 100%;
-    height: 8.25rem;
-    z-index: 0;
-}
-
 i{
     color: grey;
     opacity: 0.6;
@@ -27,26 +21,23 @@ i{
     position: relative;
 }
 
-.main_absolute{
-    position: absolute;
-    top: 30px;
-    left: 110px;
-}
-
 .hour_absolute{
     position: absolute;
     top: 0px;
     right: 0px;
 }
 
-/* UTILITIES */
-
-.bg_green{
-    background-color:  	rgb(18,140,126);
+.text_bar{
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
 }
 
-.bg_Lgrey{
-    background-color: rgb(236,229,221);
+
+.main_bg{
+    background: linear-gradient(180deg, rgba(49,187,149,1) 33%, rgba(231,227,214,1) 33%);
+    background-repeat: no-repeat;
+    height: 100vh;
 }
 
 .bg_white{
@@ -57,6 +48,22 @@ i{
     border-radius: 50%;
 }
 
+.user_msg{
+    text-align: end;
+}
+
+.user_msg > span{
+    background-color: rgb(163, 223, 163);
+    padding: 10px;
+    border-radius: 50px ;
+}
+
+.bot_msg > span{
+    background-color: white;
+    padding: 10px;
+    border-radius: 50px ;
+}
+
 
 
 /* DEBUG */
@@ -65,4 +72,16 @@ i{
 .debug .container .row > *{
     background-color: lightcoral !important; 
     outline: 3px dashed black;
+}
+
+.debug .container{
+    margin-top: 100px;
+}
+
+.debug > .container > .row{
+    height: 100%;
+}
+
+.debug > .container > .row > .bg_white{
+    height: 100%;
 }
