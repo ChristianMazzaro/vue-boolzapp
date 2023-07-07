@@ -33,6 +33,14 @@ i{
     left: 0px;
 }
 
+.text_bar_L{
+    width: 41.25rem;
+}
+
+.contact_src_bar{
+    width: 30.625rem;
+}
+
 
 .main_bg{
     background: linear-gradient(180deg, rgba(49,187,149,1) 33%, rgba(231,227,214,1) 33%);
@@ -42,6 +50,26 @@ i{
 
 .bg_white{
     background-color: white;
+}
+
+.bg_lightgrey{
+    background-color: lightgrey;
+}
+
+.bg_skyblue{
+    background-color: skyblue;
+}
+
+.bg_beije{
+    background-color: rgb(236, 229, 221);
+}
+
+.bg_text_bar{
+    background-color:rgb(183, 174, 163) ;
+}
+
+.text_grey{
+    color: grey;
 }
 
 .circle_border{
@@ -69,19 +97,19 @@ i{
 /* DEBUG */
 
 
-.debug .container .row > *{
-    background-color: lightcoral !important; 
+debug .container .row > *{
+    /* background-color: lightcoral !important;  */
     outline: 3px dashed black;
 }
 
-.debug .container{
+debug .container{
     margin-top: 100px;
 }
 
-.debug > .container > .row{
+debug > .container > .row{
     height: 100%;
 }
 
-.debug > .container > .row > .bg_white{
+debug > .container > .row > .bg_white{
     height: 100%;
 }
