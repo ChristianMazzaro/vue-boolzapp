@@ -171,7 +171,9 @@ createApp({
                 }
                 ],
                 }
-                ]
+            ],
+
+            newMessage: '',
         }  
     },
 
@@ -179,6 +181,28 @@ createApp({
         displayContact(index){
             this.contactIndex = index
             return contactIndex 
+        },
+
+        sendMsg(){
+            this.contacts[this.contactIndex].messages.push({
+                date:'oggi',
+                message:this.newMessage,
+                status:'sent'
+            })
+
+            this.newMessage=''
+
+            setTimeout(this.botMsg,1000)
+
+        },
+
+        botMsg(){
+
+            this.contacts[this.contactIndex].messages.push({
+            date:'oggi',
+            message:'ok',
+            status:'received'
+            })
         }
     },
   
