@@ -49,7 +49,7 @@
                             </div>
                         </div>
                         <div class="contacts">
-                            <div @click="displayContact(i)" class="contact" v-for="(contact,i) in contacts">
+                            <div @click="displayContact(i)" class="contact" v-for="(contact,i) in contacts" :class="{'active' : i == contactIndex}">
                                 <img class="profile_pic" :src="contact.avatar" :alt="contact.name">
                                 <div class="ms-2 py-4">
                                     <p>{{contact.name}}</p>
