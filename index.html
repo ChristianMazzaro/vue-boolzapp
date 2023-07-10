@@ -7,142 +7,115 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Boolzapp</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap-grid.min.css" integrity="sha512-EAgFb1TGFSRh1CCsDotrqJMqB2D+FLCOXAJTE16Ajphi73gQmfJS/LNl6AsjDqDht6Ls7Qr1KWsrJxyttEkxIA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap-grid.min.css" integrity="sha512-EAgFb1TGFSRh1CCsDotrqJMqB2D+FLCOXAJTE16Ajphi73gQmfJS/LNl6AsjDqDht6Ls7Qr1KWsrJxyttEkxIA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.4.0/axios.min.js" integrity="sha512-uMtXmF28A2Ab/JJO2t/vYhlaa/3ahUOgj1Zf27M5rOo8/+fcTUVH0/E0ll68njmjrLqOBjXM3V9NiPFL5ywWPQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </head>
 
 <body class="main_bg debug">
 
-    <div id="app" class="container my-5">   
-
-        <div class="row ">
-            
-            <div class="col-12 bg_white">
-                <div class="row">
-
-                    <!-- main-aside -->
-                    <div class="col-5">
-                        <!--contacts recent chats-->
-                        <div class="row">
-                            <div class="col-12">
-                                <div class="row">
-                                    <div class="col-12 p-0">
-                                        <div class="d-flex justify-content-between bg_lightgrey">
-                                            <!--user profile-->
-                                            <div class="d-flex align-items-center">
-                                                <img class="circle_border mx-2" src="https://picsum.photos/50/50" alt="immagine profilo">
-                                                <p class="d-inline-block">
-                                                    nome utente
-                                                </p>
-                                            </div>
-
-                                            <div class="d-flex align-items-center">
-                                                <a href=""><i class="fa-solid fa-circle-notch"></i></i></a>
-                                                <a href=""><i class="fa-solid fa-message"></i></a>
-                                                <a href=""><i class="fa-solid fa-ellipsis-vertical"></i></a>
-                                            </div>
-
-                                        </div>
-                                    </div>
-                                    <!--contacts + pop-up-->
-                                    <div class="col-12">
-                                        <div class="row bg_skyblue p-3">
-                                            <div class="col-2">
-                                                <!--pop-up-->
-                                                <div class="d-flex align-items-center">
-                                                    <i class="fa-solid fa-bell-slash bg_white circle_border p-3"></i>
-                                                </div>
-                                            </div>
-                                            <div class="col-10">
-                                                <p>ricevi notifiche di nuovi messaggi</p>
-                                                <a href="">Attiva notifiche desktop</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!--search input-->
-                                    <div class="col-12">
-                                        <div>
-                                            <i class="fa-solid fa-magnifying-glass"></i>
-                                            <input class="contact_src_bar" type="text" placeholder="cerca o inizia una nuova chat">
-                                        </div>
-                                    </div>
-                                    <!--contacts-->
-                                    <div class="col-12 p_relative d-flex bg_lightgrey">
-                                        <img class="circle_border mx-2" src="https://picsum.photos/50/50" alt="">
-                                        <div>
-                                            <h3>nome</h3>
-                                            <p class="text_grey">ultimo messaggio inviato</p>
-                                        </div>
-                                        <span class="hour_absolute text_grey">12:50</span>
-                                    </div>
-                                   
- 
-
+    <div id="app">   
+        <main>
+            <div class="_container">
+                <!-- left-side -->
+                <aside>
+                    <header>
+                        <div class="user_info">
+                            <div class="d-flex justfy-content-center align-items-center p-3">
+                                <img class="profile_pic" src="./img/avatar_io.jpg" alt="immagine profilo">
+                                <p class="ms-2">Sofia</p>
+                            </div>
+                            <div class="pe-2">
+                                <a href=""><i class="fa-solid fa-circle-notch"></i></i></a>
+                                <a class="mx-3" href=""><i class="fa-solid fa-message"></i></a>
+                                <a href=""><i class="fa-solid fa-ellipsis-vertical"></i></a>
+                            </div>
+                        </div>
+                        <div class="notifications p-3">
+                            <i class="fa-solid fa-bell-slash bg_white circle_border notifications_icon"></i>
+                            <div class="ms-2">
+                                <p>Ricevi notifiche di nuovi messaggi</p>
+                                <a href="">attiva le notifiche per desktop</a>
+                            </div>
+                        </div>
+                    </header>
+                    <main class="aside-main">
+                        <div class="contact-search  d-flex">
+                            <div>
+                                <i class="fa-solid fa-magnifying-glass me-2"></i>
+                            </div>
+                            <div class="aside-bar flex-grow-1">
+                                <input type="text" placeholder="cerca tra i contatti">
+                            </div>
+                        </div>
+                        <div class="contacts">
+                            <div @click="displayContact(i)" class="contact" v-for="(contact,i) in contacts">
+                                <img class="profile_pic" :src="contact.avatar" :alt="contact.name">
+                                <div class="ms-2 py-4">
+                                    <p>{{contact.name}}</p>
                                 </div>
                             </div>
                         </div>
-                    </div>
+                        
 
-                    <!--main-active chat-->
-                    <div class="col-7  p_relative p-0 bg_beije">
-                        <div>
-                            <div class="bg_lightgrey d-flex justify-content-between align-items-center">
-                                <div class="d-flex">
-                                    <img class="circle_border mx-2" src="https://picsum.photos/50/50" alt="">
-                                    <div>
-                                        <p>nome</p>
-                                        <p>ultimo messaggio inviato oggi alle 12:50</p>
-                                    </div>
-                                </div>
-                                <div>
-                                    <a href=""><i class="fa-solid fa-magnifying-glass"></i></a>
-                                    <a href=""><i class="fa-solid fa-paperclip"></i></a>
-                                    <a href=""><i class="fa-solid fa-ellipsis-vertical"></i></a>
+                    </main>
+                </aside>
+                <!-- right-side -->
+                <section>
+                    <header>
+                        <div class="user_info">
+                            <div class="d-flex justfy-content-center align-items-center p-3">
+                                <img class="profile_pic" :src="contacts[contactIndex].avatar" :alt="contacts[contactIndex].name">
+                                <div class="ms-2">
+                                    <p>{{contacts[contactIndex].name}}</p>
+                                    <p>{{contacts[contactIndex].date}}</p>
                                 </div>
                             </div>
-                            <div class="row my-5 d-flex">
-    
-                                <div class="col-6 offset-md-6 my-3 ">
-                                    <div class="user_msg px-5">
-                                        <span>messaggio molto moltlungo</span>
-                                    </div> 
-                                </div>
-                                <div class="col-6 offset-md-6 my-3">
-                                    <div class="user_msg px-5">
-                                        <span>altro messaggio molto moltlungo</span>
-                                    </div> 
-                                </div>
-                                <div class="col-6 my-3">
-                                    <div class="bot_msg px-5">
-                                        <span>
-                                            risposta mediamente lunga giusto per
-                                        </span>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-
-                        <div class="row">
-                            <div class="col-12 text_bar p-0 bg_text_bar ">
-                                <div class="d-flex justify-content-between">
-                                    <a href=""><i class="fa-regular fa-face-smile"></i></a>
-                                    <div>
-                                        <input class="text_bar_L" type="text" placeholder="scrivi un messaggio...">
-                                    </div>
-                                    <a href=""><i class="fa-solid fa-microphone"></i></a>
-                                </div>
+                            <div class="pe-4">
+                                <a href=""><i class="fa-solid fa-magnifying-glass"></i></a>
+                                <a class="mx-3" href=""><i class="fa-solid fa-paperclip"></i></a>
+                                <a href=""><i class="fa-solid fa-ellipsis-vertical"></i></a>
                             </div>
                         </div>
-                       
-                    </div>
+                    </header>
+                    <main>
+                        <div class="chat-container">
+                            <template  v-for="message in contacts[contactIndex].messages">
+                                <div v-if="message.status == 'sent'" class="msg mb-2 sent">
+                                    {{message.message}}
+                                    <span>
+                                        {{message.date}}
+                                    </span>
+                                </div>
 
-
-
-                </div>
+                                <div v-else="message.status == 'received'" class="msg mb-2 received">
+                                    {{message.message}}
+                                    <span>
+                                        {{message.date}}
+                                    </span>
+                                </div>
+                            </template>
+                            <!-- <div class="msg sent">luca</div>
+                            <div class="msg received">dimmi</div> -->
+                        </div>
+                    </main>
+                    <footer> 
+                        <div class="me-2">
+                            <a href=""><i class="fa-regular fa-face-smile"></i></a>
+                        </div>
+                        <div class="flex-grow-1">
+                            <input type="text" placeholder="Scrivi un messaggio...">
+                        </div>
+                        <div class="ms-2">
+                            <a href="">
+                                <i class="fa-solid fa-microphone"></i>
+                            </a>
+                        </div>
+                    </footer>
+                </section>
             </div>
-        </div>  
+
+        </main>
     </div>
 
     <script src='https://unpkg.com/vue@3/dist/vue.global.js'></script>
