@@ -174,13 +174,16 @@ createApp({
             ],
 
             newMessage: '',
+
+            search:'',
+
         }  
     },
 
     methods : {
         displayContact(index){
             this.contactIndex = index
-            return contactIndex 
+            return this.contactIndex 
         },
 
         sendMsg(){
@@ -203,10 +206,32 @@ createApp({
             message:'ok',
             status:'received'
             })
-        }
+        },
+
+        // lastMsg(){
+
+            
+        //     for (let i = 0; i < this.contacts.length; i++) {
+        //         let ciccio = (this.contacts[i].messages.length - 1)
+        //         console.log(ciccio)
+        //         console.log(this.contacts[i].messages[ciccio].message)
+
+        //         let fabio = this.contacts[i].messages[ciccio].message
+        //         console.log(fabio)
+
+        //        for(message in this.contacts[i].messages){
+        //         console.log(message)
+
+        //         if(this.contacts[i].messages[message].status == 'received'){
+        //             console.log(this.contacts[i].messages[message].message)
+        //         }
+        //        }
+
+        //     }
+        // }
+
     },
-  
-   
+
 }).mount('#app');
 
 

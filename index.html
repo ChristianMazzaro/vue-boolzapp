@@ -45,7 +45,7 @@
                                 <i class="fa-solid fa-magnifying-glass me-2"></i>
                             </div>
                             <div class="aside-bar flex-grow-1">
-                                <input type="text" placeholder="cerca tra i contatti">
+                                <input type="text" placeholder="cerca tra i contatti" v-model="search">
                             </div>
                         </div>
                         <div class="contacts">
@@ -53,7 +53,9 @@
                                 <img class="profile_pic" :src="contact.avatar" :alt="contact.name">
                                 <div class="ms-2 py-4">
                                     <p>{{contact.name}}</p>
+                                    <p class="text-secondary">{{contact.messages[contacts[i].messages.length - 1].message}}</p>
                                 </div>
+                                <span class="text-secondary">{{contact.messages[1].date}}</span>
                             </div>
                         </div>
                         
